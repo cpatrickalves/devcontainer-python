@@ -1,0 +1,38 @@
+FROM python:3.11-slim-bookworm
+
+ARG DEBIAN_FRONTEND=noninteractive
+ARG USER=vscode
+
+RUN DEBIAN_FRONTEND=noninteractive \
+    && apt-get update \
+    && apt-get install -y build-essential --no-install-recommends make \
+        ca-certificates \
+        git \
+        libssl-dev \
+        zlib1g-dev \
+        libbz2-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        wget \
+        curl \
+        llvm \
+        libncurses5-dev \
+        xz-utils \
+        tk-dev \
+        libxml2-dev \
+        libxmlsec1-dev \
+        libffi-dev \
+        liblzma-dev
+
+# Python and poetry installation
+RUN useradd -m $USER
+USER $USER
+ARG HOME="/home/$USER"
+
+ENV PATH="${HOME}/.local/bin:$PATH"
+ENV TIME_ZONE="America/Sao_Paulo"
+ENV BETTER_EXCEPTIONS=1
+
+RUN echo "done 0" \
+    && echo "Installing Poetry" \
+    && curl -sSL https://install.python-poetry.org | python3 - \
