@@ -1,0 +1,62 @@
+{
+	"name": "Mydevcontainer",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+	// "features": {},
+
+	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// 👇 Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "",
+
+	// 👇 Configure tool-specific properties.
+	"customizations": {
+        "vscode": {
+            "extensions":[
+					"ms-python.python",
+					"njpwerner.autodocstring",
+					"phplasma.csv-to-table",
+					"dracula-theme.theme-dracula",
+					"GitHub.copilot",
+					"GitHub.copilot-chat",
+					"GitHub.copilot-labs",
+					"ms-toolsai.jupyter",
+					"ms-toolsai.jupyter-renderers",
+					"ms-python.vscode-pylance",
+					"donjayamanne.python-environment-manager",
+					"mutantdino.resourcemonitor",
+					"Gruntfuggly.todo-tree",
+					"shardulm94.trailing-spaces",
+					"vscode-icons-team.vscode-icons",
+					"tomoki1207.pdf"
+				]
+        	}
+		},
+		"features": {
+			"ghcr.io/devcontainers/features/common-utils:2": {
+				"installZsh": true,
+				"configureZshAsDefaultShell": true,
+				"installOhMyZsh": true,
+				"upgradePackages": true,
+				"username": "vscode",
+				"userUid": "automatic",
+				"userGid": "automatic"
+			},
+			"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+				"plugins": "git git-flow F-Sy-H zsh-autosuggestions zsh-completions",
+				"omzPlugins": "https://github.com/z-shell/F-Sy-H https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-completions",
+				"username": "vscode"
+			},
+			"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+			"ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
+			"ghcr.io/devcontainers-contrib/features/glances:2": {},
+			"ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
+		}
+
+	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
