@@ -1,0 +1,2 @@
+wget -P .devcontainer https://raw.githubusercontent.com/cpatrickalves/devcontainer-python/main/.devcontainer/Dockerfile
+wget -P .devcontainer https://github.com/cpatrickalves/devcontainer-python/blob/main/.devcontainer/devcontainer.json
